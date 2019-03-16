@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "koa",
+    "plugin:prettier/recommended",
+    "plugin:flowtype/recommended",
+    "plugin:ava/recommended"
+  ],
+  "plugins": ["flowtype"],
+  "rules": {
+    "flowtype/no-types-missing-file-annotation": 0,
+    "ava/no-ignored-test-files": [
+      "error",
+      { "files": ["src/**/*.test.js", "src/integration-tests/**/*.int.js"] }
+    ]
+  }
+}
