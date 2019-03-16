@@ -5,7 +5,8 @@
 1. **Koa** as the API server
 2. **AVA** and **supertest** for testing
 3. **Flow** for totally optional type annotations
-4. **Pino** for small footprint logging
+4. **Standardjs** and **Prettier** for never-think-of-it-again code formatting
+5. **Pino** for small footprint logging
 
 ## Design
 
