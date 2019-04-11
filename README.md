@@ -32,6 +32,6 @@ Now go build your shit.
 
 ## Todo:
 
-- [ ] Dockerfile and docker-compose config
+- [x] Dockerfile and docker-compose config
 - [ ] K8s service definitions
 - [ ] Some CI config
