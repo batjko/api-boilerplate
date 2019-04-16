@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/65c57c7fc07e47e79213de30af8ba4b9)](https://app.codacy.com/app/batjko/api-boilerplate?utm_source=github.com&utm_medium=referral&utm_content=batjko/api-boilerplate&utm_campaign=Badge_Grade_Dashboard)
 # Pat's API boilerplate [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 ## Shit included:
