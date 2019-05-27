@@ -1,5 +1,6 @@
 # Pat's API boilerplate
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) ![CI Status](https://travis-ci.org/batjko/api-boilerplate.svg?branch=master "CI Status")
+
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) ![CI Status](https://travis-ci.org/batjko/api-boilerplate.svg?branch=master 'CI Status')
 
 ## Shit included:
 
@@ -36,3 +37,4 @@ Now go build your shit.
 - [x] Dockerfile and docker-compose config
 - [ ] K8s service definitions
 - [x] Some CI config
+- [ ] Migrate from Flow to Typescript?
