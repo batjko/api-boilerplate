@@ -47,7 +47,7 @@ app.use(async (ctx, next) => {
   } catch (err) {
     log.error(err.status)
     ctx.status = err.status || 500
-    ctx.body = err.message
+    ctx.body = { error: err.message || 'Server Error' }
   }
 })
 
