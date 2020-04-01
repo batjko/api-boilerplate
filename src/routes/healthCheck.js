@@ -1,8 +1,20 @@
-const router = require('koa-router')()
-
-router.get('/healthCheck', async ctx => {
-  ctx.status = 200
-  ctx.body = { message: 'OK' }
-})
-
-module.exports = router.routes()
+module.exports = async fastify => {
+  fastify.all(
+    '/healthCheck',
+    {
+      schema: {
+        response: {
+          200: {
+            type: 'object',
+            properties: {
+              message: { type: 'string' },
+            },
+          },
+        },
+      },
+    },
+    async () => {
+      return { message: 'OK' }
+    },
+  )
+}

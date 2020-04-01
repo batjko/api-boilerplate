@@ -22,6 +22,7 @@
   "author": "Patrick Metzdorf <patrick.metzdorf@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "fastify": "^2.13.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-pino-logger": "^2.1.3",

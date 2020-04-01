@@ -15,6 +15,7 @@ try {
 
 module.exports = {
   app: {
+    // @ts-ignore
     appName: require('../package.json').name || 'Service',
     serverPort: 3000,
   },
