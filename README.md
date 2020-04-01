@@ -4,11 +4,10 @@
 
 ## Shit included:
 
-1. **Koa** as the API server
+1. **Fastify** as the API server (fast and comes eith **Pino** out of the box)
 2. **AVA** and **supertest** for testing
 3. **Flow** for totally optional type annotations
 4. **Standardjs** and **Prettier** for never-think-of-it-again code formatting
-5. **Pino** for small footprint logging
 
 ## Design
 
@@ -16,7 +15,7 @@ The thing is designed to be simple but extendable.
 
 For example:
 
-- Koa makes the service very lightweight and fast. Just add routes under the routes folder and `app.use(myRoute)` them in app.js or whatever.
+- Fastify makes the service very lightweight and fast. Just add routes under the routes folder and `app.register(myRoute)` them in app.js or whatever.
 
 > An example route is the /healthCheck one, which also has an integration test (see below), and can be used to report service health to some monitoring solution.
 
@@ -27,7 +26,7 @@ For example:
 > `npm run test` for unit tests
 > `npm run test:int` for integration tests
 
-- The built-in logger is doing a few convenience tasks, but is really just a thin wrapper around pino. Running the service in `NODE_ENV=production` mode will output logs in JSON, ready for ELK or other centralised monitoring. Otherwise it'll use `pino-pretty` for the console.
+- The built-in logger is doing a few convenience tasks, but is really just a thin wrapper around pino. Outputs logs in JSON, ready for ELK or other centralised monitoring.
 
 That's it.
 Now go build your shit.
@@ -38,3 +37,4 @@ Now go build your shit.
 - [ ] K8s service definitions
 - [x] Some CI config
 - [ ] Migrate from Flow to Typescript?
+- [x] Replace Koa with Fastify
