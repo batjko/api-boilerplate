@@ -1,4 +1,6 @@
+const healthCheck = require('./routes/healthCheck')
 const { isProd, LOG_LEVEL } = require('./config')
+
 const app = require('fastify')({
   bodyLimit: 1048576 * 10, // 10MB
   logger: {
@@ -15,9 +17,14 @@ app.addHook('preHandler', (req, reply, next) => {
   next()
 })
 
-const healthCheck = require('./routes/healthCheck')
-
 /* *** ROUTES *** */
+
+app.get('/', {}, (request, reply) => {
+  reply
+    .code(200)
+    .type('text/html')
+    .send('Try the <a href="/healthCheck">Health Check</a>.')
+})
 
 app.register(healthCheck)
 
