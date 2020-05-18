@@ -1,5 +1,5 @@
 const {
-  CONFIG,
+  CONFIG = '{}',
   LOG_LEVEL = 'info',
   APP_NAME = require(process.cwd() + '/package.json').name,
   NODE_ENV = 'development',
