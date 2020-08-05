@@ -22,7 +22,7 @@
   "author": "Patrick Metzdorf <patrick.metzdorf@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "fastify": "^2.13.0"
+    "fastify": "^2.15.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
