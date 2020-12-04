@@ -38,3 +38,4 @@ Now go build your shit.
 - [x] Some CI config
 - [ ] Migrate from Flow to Typescript?
 - [x] Replace Koa with Fastify
+- [ ] Add Serverless config for Lambda deployment
