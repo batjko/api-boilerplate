@@ -1,6 +1,6 @@
 {
-  "name": "node-service",
-  "version": "1.0.0",
+  "name": "node-api-service",
+  "version": "1.0.1",
   "description": "Personal boilerplate for Node projects",
   "main": "dist/index.js",
   "scripts": {
@@ -16,10 +16,10 @@
   },
   "keywords": [
     "node",
-    "koa",
+    "fastify",
     "api"
   ],
-  "author": "Patrick Metzdorf <patrick.metzdorf@gmail.com>",
+  "author": "Patrick Metzdorf <patrick.metzdorf@hey.com>",
   "license": "MIT",
   "dependencies": {
     "fastify": "^2.15.1"
