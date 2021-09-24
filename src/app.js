@@ -1,12 +1,12 @@
 const healthCheck = require('./routes/healthCheck')
-const { isProd, LOG_LEVEL } = require('./config')
+const { isProd, LOG_LEVEL, redactedFields } = require('./config')
 
 const app = require('fastify')({
   bodyLimit: 1048576 * 10, // 10MB
   logger: {
     level: LOG_LEVEL,
     prettyPrint: isProd,
-    redact: ['req.headers.authorization'],
+    redact: redactedFields,
   },
 })
 
@@ -19,7 +19,7 @@ app.addHook('preHandler', (req, reply, next) => {
 
 /* *** ROUTES *** */
 
-app.get('/', {}, (request, reply) => {
+app.get('/', {}, (req, reply) => {
   reply
     .code(200)
     .type('text/html')

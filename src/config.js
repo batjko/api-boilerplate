@@ -19,7 +19,12 @@ module.exports = {
     appName: require('../package.json').name || 'Service',
     serverPort: 3000,
   },
-  redactedFields: ['*.password', '*.secret', 'headers.authorization'],
+  redactedFields: [
+    'req.headers.authorization',
+    '*.password',
+    '*.secret',
+    'headers.authorization',
+  ],
   LOG_LEVEL,
   APP_NAME,
   isProd: NODE_ENV.toLowerCase() === 'production',
