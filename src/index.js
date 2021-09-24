@@ -7,7 +7,7 @@ const {
 
 const start = async (name, port) => {
   try {
-    await app.listen(serverPort)
+    await app.listen(port)
     app.log.info(`${name} started on port ${port}...`)
   } catch (error) {
     app.log.error(error)
