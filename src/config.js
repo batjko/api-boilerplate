@@ -3,6 +3,7 @@ const {
   LOG_LEVEL = 'info',
   APP_NAME = require(process.cwd() + '/package.json').name,
   NODE_ENV = 'development',
+  SENTRY_DSN,
 } = process.env
 
 // CONFIG env var can override all configs below
@@ -27,6 +28,7 @@ module.exports = {
   ],
   LOG_LEVEL,
   APP_NAME,
+  SENTRY_DSN,
   isProd: NODE_ENV.toLowerCase() === 'production',
   ...configOverrides, // must be last
 }

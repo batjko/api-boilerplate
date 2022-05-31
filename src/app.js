@@ -1,5 +1,6 @@
 const healthCheck = require('./routes/healthCheck')
 const { isProd, LOG_LEVEL, redactedFields } = require('./config')
+const Sentry = require('./utils/sentry')
 
 const app = require('fastify')({
   bodyLimit: 1048576 * 10, // 10MB
@@ -8,6 +9,14 @@ const app = require('fastify')({
     prettyPrint: isProd,
     redact: redactedFields,
   },
+})
+
+app.setErrorHandler(async (error, request, reply) => {
+  // Log locally
+  console.error(error)
+  // Send error to Sentry
+  Sentry.captureException(error)
+  reply.status(500).send({ error: error.message || 'Unknown Server Error' })
 })
 
 app.addHook('preHandler', (req, reply, next) => {
