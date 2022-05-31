@@ -1,3 +1,5 @@
+const Sentry = require('../utils/sentry')
+
 module.exports = async fastify => {
   fastify.all(
     '/healthCheck',
@@ -14,6 +16,10 @@ module.exports = async fastify => {
       },
     },
     async () => {
+      Sentry.captureEvent({
+        message: 'HealthCheck called',
+        timestamp: new Date().toISOString(),
+      })
       return { message: 'OK' }
     },
   )
