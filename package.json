@@ -27,10 +27,10 @@
     "fastify": "^2.15.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.14.5",
-    "@babel/core": "7.9.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.3.4",
-    "@babel/preset-flow": "7.0.0",
+    "@babel/cli": "7.17.10",
+    "@babel/core": "7.18.2",
+    "@babel/plugin-proposal-object-rest-spread": "7.18.0",
+    "@babel/preset-flow": "7.17.12",
     "ava": "3.5.2",
     "babel-eslint": "10.0.1",
     "concurrently": "5.3.0",
