@@ -47,7 +47,7 @@
     "eslint-plugin-standard": "4.1.0",
     "flow-bin": "0.179.0",
     "nodemon": "2.0.16",
-    "pino-pretty": "2.5.0",
+    "pino-pretty": "2.6.1",
     "prettier": "1.16.4",
     "supertest": "4.0.2"
   }
