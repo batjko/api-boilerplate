@@ -1,4 +1,4 @@
-FROM node:18.6-alpine
+FROM node:18.7-alpine
 ARG NODE_ENV=development
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
