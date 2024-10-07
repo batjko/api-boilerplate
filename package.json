@@ -22,7 +22,7 @@
   "author": "Patrick Metzdorf <patrick.metzdorf@hey.com>",
   "license": "MIT",
   "dependencies": {
-    "@sentry/node": "^7.0.0",
+    "@sentry/node": "^7.119.1",
     "dotenv": "^16.0.1",
     "fastify": "^4.28.1"
   },
