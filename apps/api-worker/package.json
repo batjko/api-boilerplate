@@ -1,0 +1,18 @@
+{
+  "name": "@repo/api-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "dev": "wrangler dev src/index.ts --port 8787"
+  },
+  "dependencies": {
+    "@repo/api-core": "workspace:*",
+    "@repo/config": "workspace:*"
+  },
+  "devDependencies": {
+    "wrangler": "^4.39.0"
+  }
+}

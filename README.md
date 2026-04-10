@@ -1,41 +1,57 @@
-# Pat's API boilerplate
+# Modern API Boilerplate
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) ![CI Status](https://travis-ci.org/batjko/api-boilerplate.svg?branch=master 'CI Status')
+Portable TypeScript API starter built as a small pnpm workspace monorepo.
 
-## Shit included:
+## What this includes
 
-1. **Fastify** as the API server (fast and comes with **Pino** out of the box)
-2. **AVA** and **supertest** for testing
-3. **Flow** for totally optional type annotations
-4. **Standardjs** and **Prettier** for never-think-of-it-again code formatting
+- Hono-based shared app core with REST + OpenAPI
+- Node adapter and Cloudflare Worker adapter
+- Strict TypeScript + ESM
+- Zod contracts shared across validation, types, and OpenAPI
+- Biome, Vitest, tsup, and tsx
+- OpenTelemetry-first observability with optional Sentry
+- Agent-oriented repo docs and package boundaries
 
-## Design
+## Workspace layout
 
-The thing is designed to be simple but extendable.
+- `apps/api-node`: Node runtime, local server, Docker entrypoint, OTEL bootstrap
+- `apps/api-worker`: Cloudflare Worker adapter proving runtime portability
+- `packages/api-core`: runtime-neutral app assembly and middleware
+- `packages/contracts`: route definitions, DTOs, and OpenAPI generation
+- `packages/config`: typed env parsing for Node and Worker runtimes
 
-For example:
+## Quick start
 
-- Fastify makes the service very lightweight and fast. Just add routes under the `/routes` folder and `app.register(myRoute)` them in `app.js` or whatever.
+```bash
+pnpm install
+pnpm dev:node
+```
 
-> An example route is the `/healthCheck` one, which also has an integration test (see below), and can be used to report service health to some monitoring solution.
+Then open:
 
-- `config.js` holds all app-level configuration the rest of the app could use. The whole config object can be overridden at launch/deployment time using a `CONFIG` environment variable.
+- `http://localhost:3000/healthz`
+- `http://localhost:3000/readyz`
+- `http://localhost:3000/openapi.json`
+- `http://localhost:3000/docs`
 
-- Write some bloody tests, man. Ava is super simple and I have added examples for unit and integration tests.
+## Commands
 
-> `npm run test` for unit tests
-> `npm run test:int` for integration tests
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm openapi:generate
+pnpm openapi:check
+pnpm verify
+```
 
-- The built-in logger is doing a few convenience tasks, but is really just a thin wrapper around pino. It outputs logs in JSON, ready for ELK or other centralised monitoring.
+## Environment
 
-That's it.
-Now go build your shit.
+Copy `.env.example` to `.env` when you want local overrides. Everything is validated on startup.
 
-## Todo:
+## Docs
 
-- [x] Dockerfile and docker-compose config
-- [ ] K8s service definitions
-- [x] Some CI config
-- [ ] Migrate from Flow to Typescript?
-- [x] Replace Koa with Fastify
-- [ ] Add Serverless config for Lambda deployment
+- [AGENTS.md](./AGENTS.md)
+- [docs/architecture.md](./docs/architecture.md)
+- [CONTRIBUTING.md](./CONTRIBUTING.md)

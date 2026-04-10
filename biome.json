@@ -1,0 +1,26 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/dist",
+      "!coverage",
+      "!**/coverage",
+      "!node_modules",
+      "!**/node_modules",
+      "!apps/api-node/openapi/openapi.json"
+    ]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useTemplate": "off"
+      }
+    }
+  }
+}

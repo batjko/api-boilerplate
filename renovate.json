@@ -1,16 +1,21 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:recommended"],
+  "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "description": "Group workspace dependencies together",
+      "groupName": "workspace dependencies",
+      "matchManagers": ["npm"]
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "description": "Require manual review for majors",
+      "automerge": false,
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "description": "Automerge safe dependency updates",
+      "automerge": true,
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin"]
     }
-  ],
-  "platformAutomerge": true
+  ]
 }

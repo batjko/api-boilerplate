@@ -1,0 +1,23 @@
+{
+  "name": "@repo/api-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "dev": "tsx watch src/server.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.5",
+    "@opentelemetry/auto-instrumentations-node": "^0.67.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.206.0",
+    "@opentelemetry/sdk-node": "^0.206.0",
+    "@repo/api-core": "workspace:*",
+    "@repo/config": "workspace:*",
+    "@sentry/node": "^10.18.0",
+    "dotenv": "^17.2.3",
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.2"
+  }
+}
